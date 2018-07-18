@@ -179,23 +179,20 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function () {
-
+    var prefixName = 'o';
+    var ageSingular = 'anos';
+    var meterSingular = 'metros';
+    
     if (pessoa.sexo == "Feminino") {
-        var prefixName = 'a';
-    } else {
-        var prefixName = 'o';
+        prefixName = 'a';
     }
 
     if (pessoa.idade == 1) {
-        var ageSingular = 'ano';
-    } else {
-        var ageSingular = 'anos';
+        ageSingular = 'ano';
     }
 
     if (pessoa.caminhowQuantosMetros == 1) {
-        var meterSingular = 'metro';
-    } else {
-        var meterSingular = 'metros';
+        meterSingular = 'metro';
     }
 
     return `Olá, eu sou ${prefixName} ${pessoa.nomeCompleto()}, tenho ${pessoa.idade} ${ageSingular}, ` + 
