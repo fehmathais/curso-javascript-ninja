@@ -7,38 +7,31 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-var isTruthy = function (argument) {
-    if (argument) {
-        return true;
-    }
-
-    return false;
+var isTruthy = function(param) {
+    return !!param
 }
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-isTruthy('');
-isTruthy(NaN);
+isTruthy(false);
 isTruthy(null);
 isTruthy(undefined);
+isTruthy('');
 isTruthy(0);
-isTruthy(-0);
-isTruthy(false);
+isTruthy(NaN);
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-isTruthy('a');
 isTruthy(1);
-isTruthy(-1);
-isTruthy(123.123);
-isTruthy(!null);
-isTruthy(!undefined);
-isTruthy(!'');
-isTruthy(!NaN);
-isTruthy(!-0);
-isTruthy(true);
-isTruthy(!false);
-
+isTruthy('felipe');
+isTruthy([]);
+isTruthy({});
+isTruthy(function(){});
+isTruthy('Curso JS ninja');
+isTruthy(20 * 30);
+isTruthy(10 + 10);
+isTruthy([1, 2, 3]);
+isTruthy({a: 1, b: 2, c: 3});
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -67,14 +60,14 @@ var carro = {
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-carro.mudarCor = function (cor) {
+carro.mudarCor = function(cor) {
     carro.cor = cor;
 }
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-carro.obterCor = function () {
+carro.obterCor = function() {
     return carro.cor;
 }
 
@@ -117,7 +110,23 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+carro.adicionarPessoas = function (numeroPessoas) {
+    var totalPessoas = carro.quantidadePessoas + numeroPessoas;
+    var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+    var pluralOuSingular = quantasPessoasCabem === 1 ? 'pessoa' : 'pessoas';
+
+    if (carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos) {
+        return `O carro já está lotado`;
+    }    
+
+    if (carro.quantidadePessoas > carro.assentos) {
+        return `Só cabem mais ${quantasPessoasCabem} ${pluralOuSingular}`;
+    }
+
+    carro.quantidadePessoas += numeroPessoas;
+
+    return `Já temos ${totalPessoas} no carro`;
+}
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -127,38 +136,38 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.obterCor(); //preto
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudarCor('Vermelho');
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); //Vermelho
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudarCor('Verde Musgo');
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); //Verde Musgo
 
 // Qual a marca e modelo do carro?
-?
+carro.obterMarcaModelo(); //Esse carro é um BMW BMW 120i Sport
 
 // Adicione 2 pessoas no carro.
-?
+carro.adicionarPessoas(2);
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.adicionarPessoas(4);
 
 // Faça o carro encher.
-?
+carro.adicionarPessoas(3);
 
 // Tire 4 pessoas do carro.
-?
+carro.adicionarPessoas(-4);
 
 // Adicione 10 pessoas no carro.
-?
+carro.adicionarPessoas(10);
 
 // Quantas pessoas temos no carro?
-?
+10
 ```
