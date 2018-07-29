@@ -2,12 +2,14 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-// ?
+var arr = [1, 'felipe', 3 * 20, 4.947198263982, {name: 'Felipe'}];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-var arr = [1, 'felipe', 3 * 20, 4.947198263982, {name: 'Felipe'}];
+function indexOf(arr, index) {
+  return arr[index];
+}
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
