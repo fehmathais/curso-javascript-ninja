@@ -7,8 +7,8 @@ var arr = [1, 'felipe', 3 * 20, 4.947198263982, {name: 'Felipe'}];
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-function indexOf(arr, index) {
-  return arr[index];
+function indexOf(arr) {
+  return arr;
 }
 
 /*
@@ -35,11 +35,11 @@ var arr = [1, 'felipe', 3 * 20, 4.947198263982, {name: 'Felipe'}];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-indexOf(arr, 0);
-indexOf(arr, 1);
-indexOf(arr, 2);
-indexOf(arr, 3);
-indexOf(arr, 4);
+console.log(indexOf(arr, 0));
+console.log(indexOf(arr, 1));
+console.log(indexOf(arr, 2));
+console.log(indexOf(arr, 3));
+console.log(indexOf(arr, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
